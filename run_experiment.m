@@ -1,14 +1,13 @@
-% This is the script for running the Treisman Visual Search experiment
+% UITLEGGGGG
+% UITLEGGGGG
+This is the script for running the Treisman Visual Search experiment
 % Prompt for studentnumber, trials and percentage
-prompt = {'Studentnumber participant:','Number of trials', 'Percentage'};
+prompt = {'Studentnumber participant:','Max. number of trials', 'Target probability'};
 answer = inputdlg(prompt,'Input experiment info',1,{'','600','0.8'})    % show input dialog with default trials and target percentage
-
-% questdlg("Start Experiment", "TITLE", 'No')   % start button to start
 
 studentID = str2double(answer(1));
 trials = str2double(answer(2));
 percentage = str2double(answer(3));
-
 
 %% Initialize data block
 % studentID = 1089030;

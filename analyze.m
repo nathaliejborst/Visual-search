@@ -1,5 +1,8 @@
+% UITLEGGGGG
+% UITLEGGGGGG
+
 % load data from participant
-participant = load('Copy_of_run_experimentNaN.mat').dataBlock;
+participant = load('run_experiment13334212.mat').dataBlock;
 
 condition = {'dcol', 'dsym', 'c'};
 setSize = [8 24 40 56];
@@ -41,9 +44,6 @@ for i = 1:length(condition) % loop through all conditions
 end
 
 %% design figure
-set(gca,'XTickLabel',[]);   % hide values x-axis
-% set(gca,'XTickLabel',[0 setSize]);
-% xlim([0 64])
 xlabel('Number of objects in stimulus', 'FontSize', 12);    % add title to y-axis
 ylabel('Reaction time (s)', 'FontSize', 12);    % add title to x-axis
 legend(p,{'pop-out color','pop-out symbol', 'conjunctive'},'Location','northwest')  % add legend for every condition
@@ -52,5 +52,3 @@ grid on     % add a grid to the figure
 hold off
 
 stat=false;
-
-

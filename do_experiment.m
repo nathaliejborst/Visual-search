@@ -1,5 +1,6 @@
 function [reactionTime, correct, buttonPress] = do_experiment(n, cond, target)
 % description of the function
+& UITLEGGGGGG
 
 %% Create figure using n, the condition and whether there's a target
 Treisman_exp(n, cond, target)
