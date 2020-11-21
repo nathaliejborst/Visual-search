@@ -77,7 +77,8 @@ switch cond
         end        
 end
 
-%% Put stimuli in figure
+
+%% 
 set(gca,'visible','off','xlim',[0 1],'ylim',[0 1]); % hide axis and set limits
  
 % Check if there are target symbol and distractor color combination-s

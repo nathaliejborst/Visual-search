@@ -10,7 +10,7 @@ conditionColors = {[0.0148, 0.7104, 0.1482], [0.9765, 0.4314, 0.2000], [0.1200, 
 
 figure
 
-conditionHistory = {participant(:).condition};  % get the history of all conditions for the participant
+conditionHistory = {participant(:).condition}  % get the history of all conditions for the participant
 RTHistory = [participant(:).RT];    % get the history of all reaction times for the participant
 
 meanRTs = [];    % initialize empty array for coordinates mean reaction times per condition
