@@ -1,9 +1,9 @@
-function analyze()
+function analyze(studentID)
 % UITLEGGGGG
 % UITLEGGGGGG
 
 % load data from participant
-participant = load(['../Data/experiment_data_' num2str(1) '.mat']).dataBlock;
+participant = load(['../Data/experiment_data_' num2str(studentID) '.mat']).dataBlock;
 
 % define conditions, sizes and plot colors
 condition = {'dcol', 'dsym', 'c'};
