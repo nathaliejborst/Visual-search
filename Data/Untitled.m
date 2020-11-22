@@ -1,0 +1,1 @@
+participant = load('../Code/run_experimentNaN.mat').dataBlock

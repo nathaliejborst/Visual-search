@@ -10,6 +10,8 @@ studentID = str2double(answer(1));
 trials = str2double(answer(2));
 percentage = str2double(answer(3));
 
+save('Data/run_experiment','answer');
+
 %% Initialize experiment data
 condition = {'dcol', 'dsym', 'c'};
 setSize = [8 24 40 56];
@@ -156,6 +158,6 @@ pause(3)    % pause 3 seconds before closing the figure
 close    % close figure
 
 % Save data participant in a .mat
-save(['run_experiment' num2str(studentID) '.mat'],'dataBlock')
+save(['Data/run_experiment' num2str(studentID) '.mat'],'dataBlock')
  
 

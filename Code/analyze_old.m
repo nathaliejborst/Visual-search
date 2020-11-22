@@ -1,5 +1,21 @@
+function analyze_old()
+% UITLEGGGGG
+% UITLEGGGGGG
+
 % load data from participant
-participant = load('Copy_of_run_experimentNaN.mat').dataBlock;
+% participant = load(['../Data/experiment_data_' num2str(1) '.mat']).dataBlock;
+files = dir('../Data/experiment_data*');
+names = {files(:).name};
+
+ddFig = uifigure('Name', 'Choose file to analyze');
+dd = uidropdown(ddFig,'Position',[50 50 300 20] ,'Items',{files(:).name}, 'ValueChangedFcn',@(dd,event) selected(dd));
+
+function file = selected(dd)
+    file = dd.Value
+    close(ddFig) 
+end
+
+participant = load(['../Data/' file]).dataBlock
 
 condition = {'dcol', 'dsym', 'c'};
 setSize = [8 24 40 56];
@@ -11,16 +27,6 @@ conditionHistory = {participant(:).condition};  % get the history of all conditi
 RTHistory = [participant(:).RT];    % get the history of all reaction times for the participant
 
 meanRTs = [];    % initialize empty array for coordinates mean reaction times per condition
-
-t = timer('TimerFcn', 'stat=false; disp(''Timer!'')',... 
-                 'StartDelay',10);
-             
-start(t)
-stat=true;
-while(stat==true)
-  disp('.')
-  pause(0.3)
-end
 
 %% Get reaction times for all conditions per set size and plot these
 for i = 1:length(condition) % loop through all conditions
@@ -41,16 +47,10 @@ for i = 1:length(condition) % loop through all conditions
 end
 
 %% design figure
-set(gca,'XTickLabel',[]);   % hide values x-axis
-% set(gca,'XTickLabel',[0 setSize]);
-% xlim([0 64])
 xlabel('Number of objects in stimulus', 'FontSize', 12);    % add title to y-axis
 ylabel('Reaction time (s)', 'FontSize', 12);    % add title to x-axis
 legend(p,{'pop-out color','pop-out symbol', 'conjunctive'},'Location','northwest')  % add legend for every condition
 box on  % put box around figure
 grid on     % add a grid to the figure
 hold off
-
-stat=false;
-
-
+end
